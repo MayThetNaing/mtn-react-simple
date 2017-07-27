@@ -1,5 +1,5 @@
 import { FETCHING_DATA, FETCHING_DATA_SUCCESS, FETCHING_DATA_FAILURE} from './constants'
-import getPeople from './api'
+import { fetchBooks } from './api/'
 
 export function getData() {
 	return {
@@ -31,11 +31,10 @@ export function fetchData() {
 	return (dispatch) => {
 		dispatch(getData())
 
-		getPeople()
+		return fetchBooks()
 			.then((data) => {
 				dispatch(getDataSuccess(data))
 			})
-			.catch((err) => console.log('err:', err))
-
+			.catch((err) => console.log('err:', err));
 	}
 }

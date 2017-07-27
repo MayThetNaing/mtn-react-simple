@@ -27,10 +27,10 @@ const App = (props) => {
 				}
 				{
 					props.appData.data.length ? (
-						props.appData.data.map((person,i)=>{
+						props.appData.data.map((book,i)=>{
 							return <View key={i}>
-								<Text>Name: {person.name}</Text>
-								<Text>Age: {person.age}</Text>
+								<Text>Name: {book.title}</Text>
+								<Text>Age: {book.author}</Text>
 							</View>
 						})
 					) : null
